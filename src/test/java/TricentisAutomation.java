@@ -103,6 +103,7 @@ public class TricentisAutomation extends SeleniumHelper {
         int pretInitialPriceInt = Integer.parseInt(pretInitialPriceString);
         System.out.println("Pretul initial este ca int: " + pretInitialPriceInt);
         Select selectProcessor = new Select(driver.findElement(By.id("product_attribute_16_5_4"))); // intantieim inpoutul de tip select
+        Thread.sleep(500);
         selectProcessor.selectByValue("13");
         Select selectRAMI = new Select(driver.findElement(By.id("product_attribute_16_6_5")));
         selectRAMI.selectByValue("17");
@@ -118,6 +119,7 @@ public class TricentisAutomation extends SeleniumHelper {
         System.out.println("Pretul ramilor in INT este: " + pretRAMIint);
         // SELECT RADIO BUttons -> OS
         WebElement radioButtonOS = driver.findElement(By.id("product_attribute_16_4_7_21")); //OS ->Windows10
+        Thread.sleep(500);
         radioButtonOS.click();
         String lableOs = driver.findElement(By.xpath("//div[6]/dl/dd[4]/ul/li[3]/label")).getText();
         int startOS = lableOs.length() - 6;
@@ -129,6 +131,7 @@ public class TricentisAutomation extends SeleniumHelper {
         System.out.println("Pretul la OS ca int este: " + pretOsInt);
         //Checkbox Software -> Acrobat Reader
         WebElement acrobatReader = driver.findElement(By.id("product_attribute_16_8_8_23"));
+        Thread.sleep(500);
         acrobatReader.click();
         //afisam continutul de label din cadul acestui input -pentru a extrage valoarea
         String lableAcrobatReader = driver.findElement(By.xpath("//dd[5]/ul/li[2]/label")).getText();
@@ -141,6 +144,7 @@ public class TricentisAutomation extends SeleniumHelper {
         System.out.println("Pretul la acrobat Reader ca int este: " + pretAcrobatReaderInt);
         // Checkbox Software  -> Total Commander
         WebElement totalCommander = driver.findElement(By.id("product_attribute_16_8_8_24"));
+        Thread.sleep(500);
         totalCommander.click();
         String lableTotalCommander = driver.findElement(By.xpath("//dd[5]/ul/li[3]/label")).getText();
         int startTotalCommander = lableTotalCommander.length() - 6;
@@ -155,6 +159,7 @@ public class TricentisAutomation extends SeleniumHelper {
         microsoftOffice.click();
         // Radio Buttons HDD
         WebElement hddOption = driver.findElement(By.id("product_attribute_16_3_6_19"));
+        Thread.sleep(500);
         hddOption.click();
         String labelHdd = driver.findElement(By.xpath("//dl/dd[3]/ul/li[2]/label")).getText();
         int startHdd = labelHdd.length() - 8;
@@ -168,9 +173,10 @@ public class TricentisAutomation extends SeleniumHelper {
         int pretOptiuni = pretRAMIint + pretHddInt + pretOsInt + pretAcrobatReaderInt + pretTotalCommanderInt;
         System.out.println("Pretul optiunilor este: " + pretOptiuni);
         WebElement cumpara = driver.findElement(By.id("add-to-cart-button-16"));
+        Thread.sleep(500);
         cumpara.click();
         // ne ducem din nou pe pagina de cart
-        Thread.sleep(3000); //imi lipsea un timeout pan la radnarea paginii de cart si de aceea dadea fail
+        Thread.sleep(2000); //imi lipsea un timeout pan la randarea paginii de cart si de aceea dadea fail
         WebElement shoppingCartSecond = driver.findElement(By.xpath("//*[@id=\"topcartlink\"]/a/span[1]"));
         shoppingCartSecond.click();
         Thread.sleep(5000);
@@ -274,14 +280,14 @@ public class TricentisAutomation extends SeleniumHelper {
         Thread.sleep(4000);
         WebElement continueButtonSecond = driver.findElement(By.xpath("//*[@id=\"shipping-buttons-container\"]/input"));
         continueButtonSecond.click();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         WebElement nextDayAirRadioButton = driver.findElement(By.id("shippingoption_1"));
         nextDayAirRadioButton.click();
         Thread.sleep(2000);
         WebElement shippingContinueButton = driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/input"));
         shippingContinueButton.click();
         // 24. Payment > Credit Card, Apasati Continue
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         WebElement crediCardRadioButton = driver.findElement(By.id("paymentmethod_2"));
         crediCardRadioButton.click();
         Thread.sleep(500);
