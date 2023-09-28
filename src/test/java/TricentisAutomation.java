@@ -102,7 +102,7 @@ public class TricentisAutomation extends SeleniumHelper {
         System.out.println("Pretul initial este ca string: " + pretInitialPriceString);
         int pretInitialPriceInt = Integer.parseInt(pretInitialPriceString);
         System.out.println("Pretul initial este ca int: " + pretInitialPriceInt);
-        Select selectProcessor = new Select(driver.findElement(By.id("product_attribute_16_5_4"))); // intantieim inpoutul de tip select
+        Select selectProcessor = new Select(driver.findElement(By.id("product_attribute_16_5_4"))); // intantiem inpoutul de tip select
         Thread.sleep(500);
         selectProcessor.selectByValue("13");
         Select selectRAMI = new Select(driver.findElement(By.id("product_attribute_16_6_5")));
@@ -179,7 +179,7 @@ public class TricentisAutomation extends SeleniumHelper {
         Thread.sleep(2000); //imi lipsea un timeout pan la randarea paginii de cart si de aceea dadea fail
         WebElement shoppingCartSecond = driver.findElement(By.xpath("//*[@id=\"topcartlink\"]/a/span[1]"));
         shoppingCartSecond.click();
-        Thread.sleep(5000);
+        Thread.sleep(3500);
         // extragem totalul de plata pentru ultimul produs
         String productSubTotal = driver.findElement(By.xpath("//*[@ class='cart-item-row'][2]/td[6]/span[2]")).getText();
         System.out.println("Ultimul pret din tabel este: " + productSubTotal);
@@ -277,7 +277,7 @@ public class TricentisAutomation extends SeleniumHelper {
         WebElement continueButton = driver.findElement(By.xpath("//*[@id=\"billing-buttons-container\"]/input"));
         continueButton.click();
         //   23. Shipping > Next Day Air, Apasati Continue
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         WebElement continueButtonSecond = driver.findElement(By.xpath("//*[@id=\"shipping-buttons-container\"]/input"));
         continueButtonSecond.click();
         Thread.sleep(2000);
