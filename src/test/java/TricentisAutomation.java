@@ -179,7 +179,7 @@ public class TricentisAutomation extends SeleniumHelper {
         Thread.sleep(2000); //imi lipsea un timeout pan la randarea paginii de cart si de aceea dadea fail
         WebElement shoppingCartSecond = driver.findElement(By.xpath("//*[@id=\"topcartlink\"]/a/span[1]"));
         shoppingCartSecond.click();
-        Thread.sleep(3500);
+        Thread.sleep(3000);
         // extragem totalul de plata pentru ultimul produs
         String productSubTotal = driver.findElement(By.xpath("//*[@ class='cart-item-row'][2]/td[6]/span[2]")).getText();
         System.out.println("Ultimul pret din tabel este: " + productSubTotal);
